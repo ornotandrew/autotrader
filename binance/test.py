@@ -1,5 +1,5 @@
-import csv
-from api import klines
+import pandas as pd
+from api import candles
 
 fieldnames = [
     'Open time',
@@ -16,10 +16,6 @@ fieldnames = [
     'Ignore.'
 ]
 
-with open('btcusdt.csv', 'w', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerow(fieldnames)
-    writer.writerows(klines('BTCUSDT'))
+df = pd.DataFrame(candles('BTCUSDT'), columns=fieldnames)
 
-
-
+print(df)

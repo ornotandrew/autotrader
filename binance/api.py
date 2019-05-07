@@ -12,7 +12,7 @@ def get(path, params):
     )
     return r.json()
 
-def klines(symbol, interval='5m', limit=500):
+def candles(symbol, interval='5m', limit=500):
     return get('klines', {
         'symbol': symbol,
         'interval': interval,

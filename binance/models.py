@@ -8,8 +8,10 @@ value = Numeric(18, 8)
 class Interval(Enum):
     5m = '5m'
 
+
 class Symbol(Enum):
     BTCUSDT = 'BTCUSDT'
+
 
 class Candle(base):
     __tablename__ = 'candle'
