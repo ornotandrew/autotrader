@@ -22,7 +22,8 @@ def get(path, params):
     r = requests.get(
         f'{base_url}/{path}',
         headers={'X-MBX-APIKEY': api_key},
-        params=params
+        params=params,
+        timeout=10
     )
     if r.status_code == 429:
         raise Exception('The Binance API has reached its rate limit')
