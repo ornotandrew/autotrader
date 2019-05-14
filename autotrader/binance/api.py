@@ -6,8 +6,8 @@ base_url = 'https://api.binance.com/api/v1'
 api_key = os.getenv('API_KEY')
 
 
-def to_millis(pdTimestamp):
-    return int(pdTimestamp.timestamp() * 1000) if pdTimestamp is not None else None
+def to_millis(dt):
+    return int(dt.timestamp() * 1000) if dt is not None else None
 
 
 class BinanceException(Exception):
